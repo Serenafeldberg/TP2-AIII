@@ -1,0 +1,18 @@
+Description: 
+These impulse responses were recorded in a tennis court with no roof. The court is designed for Real Tennis, or Caitch and can be found at Falkland Palace in Fife. It was originally built for King James V of Scotland and construction began in 1539.
+
+Mono: 
+
+    falkland_tennis_court_omni.wav
+
+Sample Rate: 48 kHz
+Number of Channels: 1
+Bits per Sample: 24
+Duration: 4.8 s
+File Size: 675.27 KB
+File Format: wav
+Source Sound: Genelec S30D, 15 second log. sine sweep
+Microphone: Soundfield Microphone, SPS422B
+Source Receiver Distance (m): 10.76 m
+Source Height: 1.5 m
+Receiver Height: 1.5 m

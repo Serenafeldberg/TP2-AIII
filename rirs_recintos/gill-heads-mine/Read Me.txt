@@ -1,0 +1,45 @@
+Description: 
+These Impulse Responses were recorded in a disused mine found near Trollers Gill called Gill Heads Mine. The mine was used to extract Lead and Fluorite and was closed down as recently as the 1980s. Impulse responses were recorded at two sites (labelled site 1 and site 2) inside the mine not more than 30 m from the entrance. For each site there are two sets of impulse responses: One is made with a single directional sound source (IR-1), and the other is made with an array of two directional sound sources pointing in opposite directions in an attempt to better approximate an omni-directional source (IR-2).
+
+Mono: 
+
+    mine_site1_1way_mono.wav
+
+Sample Rate: 96 kHz
+Number of Channels: 1
+Bits per Sample: 24
+Duration: 5 s
+File Size: 1.37 MB
+File Format: wav
+
+
+    mine_site2_1way_mono.wav
+
+Sample Rate: 96 kHz
+Number of Channels: 1
+Bits per Sample: 24
+Duration: 5 s
+File Size: 1.37 MB
+File Format: wav
+
+
+    mine_site1_2way_mono.wav
+
+Sample Rate: 96 kHz
+Number of Channels: 1
+Bits per Sample: 24
+Duration: 5 s
+File Size: 1.37 MB
+File Format: wav
+
+
+    mine_site2_2way_mono.wav
+
+Sample Rate: 96 kHz
+Number of Channels: 1
+Bits per Sample: 24
+Duration: 5 s
+File Size: 1.37 MB
+File Format: wav
+
+

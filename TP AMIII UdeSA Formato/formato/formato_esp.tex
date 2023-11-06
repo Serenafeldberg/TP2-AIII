@@ -1,0 +1,32 @@
+% Formato para español
+% Lenguaje{{{
+\usepackage[utf8]{inputenc} % para poder usar tildes y caracteres especiales
+\usepackage[spanish,es-tabla]{babel} % para escribir en español
+\usepackage{csquotes}
+\usepackage{listings}
+\usepackage{amsmath}
+\usepackage[T1]{fontenc}
+
+%}}}
+
+% Otros{{{
+% Para uniones en la definición de autores
+% paquete authblk
+\renewcommand\Authsep{, }
+\renewcommand\Authand{ y }
+\renewcommand\Authands{ y }
+\setlength{\affilsep}{0.5cm}
+
+% Abstract
+\renewenvironment{abstract}{
+    \noindent\hfill\begin{minipage}{\textwidth}
+	Resumen --- \itshape}
+    {\par\end{minipage}\vspace{1cm}}
+
+    % Para union de numeros de pagina
+    \newcommand{\devar}{de}
+
+    % Para nombres de anexos
+    \newcommand{\anexovar}{Anexo}
+
+%}}}

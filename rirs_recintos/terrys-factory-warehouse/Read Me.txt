@@ -1,0 +1,19 @@
+Description: 
+These Impulse Responses were measured in a large empty warehouse inside the Terry’s chocolate and confectory factory in York. The factory was closed in 2005 and the site is planned for redevelopment.
+
+Mono: 
+
+    terrys_warehouse_omni.wav
+
+Sample Rate: 48 kHz
+Number of Channels: 1
+Bits per Sample: 24
+Duration: 22.67 s
+File Size: 3.11 MB
+File Format: wav
+Source Sound: Genelec S30D, 15 second log. sine sweep
+Microphone: Soundfield Microphone, SPS422B
+Source Receiver Distance (m): 28.35 m
+Source Height: 1.5 m
+Receiver Height: 1.5 m
+Temperature: 16 °C

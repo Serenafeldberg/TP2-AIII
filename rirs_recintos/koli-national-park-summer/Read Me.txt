@@ -1,0 +1,123 @@
+Description: 
+Impulse Responses measured in the forest of Koli National Park in Finland during mid-summer. There was no snow on the ground at this time. Impulse responses were captured at four sites and were measured using a B-format Soundfield microphone. For each site there are two sets of impulse responses: One is made with a single directional sound source (IR-1), and the other is made with an array of four directional sound sources pointing in different directions in an attempt to better approximate an omni-directional source (IR-2).
+
+Mono: 
+
+    koli_summer_site1_1way_mono.wav
+
+Sample Rate: 96 kHz
+Number of Channels: 1
+Bits per Sample: 24
+Duration: 5 s
+File Size: 1.37 MB
+File Format: wav
+Source Sound: Single directional loudspeaker
+Source Receiver Distance (m): 9 m
+Source Height: 1.5 m
+Receiver Height: 1.5 m
+Temperature: 11 °C
+
+
+    koli_summer_site1_4way_mono.wav
+
+Sample Rate: 96 kHz
+Number of Channels: 1
+Bits per Sample: 24
+Duration: 5 s
+File Size: 1.37 MB
+File Format: wav
+Source Sound: Four-way loudspeaker array
+Source Receiver Distance (m): 9 m
+Source Height: 1.5 m
+Receiver Height: 1.5 m
+Temperature: 11 °C
+
+
+    koli_summer_site2_1way_mono.wav
+
+Sample Rate: 96 kHz
+Number of Channels: 1
+Bits per Sample: 24
+Duration: 5 s
+File Size: 1.37 MB
+File Format: wav
+Source Sound: Single directional loudspeaker
+Source Receiver Distance (m): 11 m
+Source Height: 1.5 m
+Receiver Height: 1.5 m
+Temperature: 13 °C
+
+
+    koli_summer_site2_4way_mono.wav
+
+Sample Rate: 96 kHz
+Number of Channels: 1
+Bits per Sample: 24
+Duration: 5 s
+File Size: 1.37 MB
+File Format: wav
+Source Sound: Four-way loudspeaker array
+Source Receiver Distance (m): 11 m
+Source Height: 1.5 m
+Receiver Height: 1.5 m
+Temperature: 13 °C
+
+
+    koli_summer_site3_1way_mono.wav
+
+Sample Rate: 96 kHz
+Number of Channels: 1
+Bits per Sample: 24
+Duration: 5 s
+File Size: 1.37 MB
+File Format: wav
+Source Sound: Single directional loudspeaker
+Source Receiver Distance (m): 7.2 m
+Source Height: 1.5 m
+Receiver Height: 1.5 m
+Temperature: 16 °C
+
+
+    koli_summer_site3_4way_mono.wav
+
+Sample Rate: 96 kHz
+Number of Channels: 1
+Bits per Sample: 24
+Duration: 5 s
+File Size: 1.37 MB
+File Format: wav
+Source Sound: Four-way loudspeaker array
+Source Receiver Distance (m): 7.2 m
+Source Height: 1.5 m
+Receiver Height: 1.5 m
+Temperature: 16 °C
+
+
+    koli_summer_site4_1way_mono.wav
+
+Sample Rate: 96 kHz
+Number of Channels: 1
+Bits per Sample: 24
+Duration: 5 s
+File Size: 1.37 MB
+File Format: wav
+Source Sound: Single directional loudspeaker
+Source Receiver Distance (m): 7.2 m
+Source Height: 1.5 m
+Receiver Height: 1.5 m
+Temperature: 12 °C
+
+
+    koli_summer_site4_4way_mono.wav
+
+Sample Rate: 96 kHz
+Number of Channels: 1
+Bits per Sample: 24
+Duration: 5 s
+File Size: 1.37 MB
+File Format: wav
+Source Sound: Four-way loudspeaker array
+Source Receiver Distance (m): 7.2 m
+Source Height: 1.5 m
+Receiver Height: 1.5 m
+Temperature: 12 °C

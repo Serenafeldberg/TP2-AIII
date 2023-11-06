@@ -1,0 +1,26 @@
+% Formato para ingles
+% Lenguaje{{{
+\usepackage[utf8]{inputenc} % para poder usar tildes y caracteres especiales
+\usepackage[english]{babel} % para escribir en español
+\usepackage{csquotes}
+
+%}}}
+
+% Otros{{{
+% Para uniones en la definición de autores
+% paquete authblk
+\setlength{\affilsep}{0.5cm}
+
+% Abstract
+\renewenvironment{abstract}{
+    \noindent\hfill\begin{minipage}{\textwidth}
+	Abstract --- \itshape}
+    {\par\end{minipage}\vspace{1cm}}
+
+    % Para union de numeros de pagina
+    \newcommand{\devar}{of}
+
+    % Para nombres de anexos
+    \newcommand{\anexovar}{Appendix}
+
+%}}}

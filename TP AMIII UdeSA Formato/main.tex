@@ -1,0 +1,76 @@
+\documentclass[10pt]{article}
+
+% Cargo los archivos con el formato
+\input{formato/formato_general}
+
+% Selecciono mas opciones de formato seggun el idioma
+%\input{formato/formato_eng} % ingles
+\input{formato/formato_esp} % español
+
+
+%%% Opciones Generales del documento%{{{
+\materia{Análisis Matemático III}
+\Rheader{\today, Argentina}
+
+\titulo{Titulo del TP}
+
+\author[1]{Alumno 1} 
+\author[2]{Alumno 2}
+\author[3]{Alumno 3}
+
+\affil[1]{Universidad de San Andrés\protect\\ \email{mail1@gmail.com}}
+\affil[2]{Universidad de San Andrés\protect\\ \email{mail2@gmail.com}}
+\affil[3]{Universidad de San Andrés\protect\\ \email{mail3@gmail.com}}
+\date{} %Dejar blanco para que no aparezca la fecha en el titulo
+
+%}}}
+
+% INICIO DEL DOCUMENTO%{{{
+
+\addbibresource{bibliografia.bib}
+
+\begin{document}
+\lstset{language=Python}
+\lstset{frame=lines}
+%\lstset{caption={Insert code directly in your document}}
+\lstset{label={lst:code_direct}}
+\lstset{basicstyle=\footnotesize}
+
+% Titulo y abstract %{{{
+\institulo % Comando propio, inserta el titulo
+
+\docstart % Comando propio, setea el formato de documento
+\input{secciones/resumen}
+
+%}}}
+
+% Comienzo de doble columnas
+\begin{multicols*}{2} % Pongo el '*' para que no terminen parejas
+
+    \input{secciones/introduccion}
+
+    \input{secciones/marco_teorico.tex}
+    
+    \input{secciones/procedimiento.tex}
+    
+    \input{secciones/Resultados.tex}
+    
+    \input{secciones/Conclusiones.tex}
+
+    \printbibliography
+
+\end{multicols*}
+
+
+%\appendixstart
+
+%\section{Figura y tabla de ejemplo}
+%\begin{multicols*}{2}
+
+%\input{secciones/fig_tab_ejemplo.tex}
+
+%\end{multicols*}
+
+\end{document}
+
+%}}}

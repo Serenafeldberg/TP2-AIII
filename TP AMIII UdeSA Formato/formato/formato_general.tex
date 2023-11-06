@@ -1,0 +1,269 @@
+%% Para buscar documentacion de paquetes: http://texdoc.net/
+
+% Formato de pagina{{{
+% Fuente
+\usepackage[]{times}
+
+% Pagina
+\usepackage[]{geometry} %Para definir donde se ubica el texto
+\geometry{a4paper,textwidth={17cm},textheight={23cm},left={2cm},top={2.5cm},}
+
+% Encabezado y Pie de pagina
+\usepackage[]{fancyhdr}
+\pagestyle{fancy}
+\renewcommand{\headrulewidth}{0pt} % para que no haya linea decorativa en el header.
+
+% Columnas
+\usepackage[]{multicol} %Para poder usar columnas
+\setlength{\columnsep}{1cm} %Separacion entre columnas de 1 cm
+
+% Para definir afiliaciones de autores
+\usepackage[]{authblk} 
+
+% Formato de fecha
+\usepackage{datetime2}
+\DTMsetstyle{iso}
+
+% Para poder poner numero total de paginas en pie de pagina
+%\usepackage{lastpage}
+\usepackage[pagecontinue=false]{pageslts}
+
+% Secciones{{{
+\usepackage[]{titlesec} % Da formato a secciones
+%% Seccion
+%\titleformat{\section}
+%{\normalfont\large\bfseries\MakeUppercase}{\thesection.}{.3em}{}
+%\titlespacing*{\section}{0cm}{0.25cm}{0.15cm}
+
+%% Subseccion
+%\titleformat{\subsection}
+%{\normalfont\large\bfseries}{\thesubsection.}{.3em}{}
+%\titlespacing*{\subsection}{.15cm}{0.2cm}{0.1cm}
+
+%%Subsubseccion
+%\titleformat{\subsubsection}
+%{\normalfont\normalsize\bfseries}{\thesubsubsection.}{.3em}{}
+%\titlespacing*{\subsubsection}{0.25cm}{0.15cm}{0.05cm}
+
+%\titleformat{\caption}
+%{\normalfont\normalsize\bfseries}{\thesubsubsection.}{.3em}{}
+%\titlespacing*{\subsubsection}{0.25cm}{0.15cm}{0.05cm}
+%}}}
+
+%}}}
+
+% Figuras y tablas{{{
+\usepackage[]{graphicx}
+\usepackage[space]{grffile} %Por si nombre de archivo tiene espacios
+
+\usepackage[]{float} %Para poder usar [H] para poner fig correctamente en 2 columnas
+
+\graphicspath{{img/}} %Defino carpeta para figuras
+
+% Tablas
+% Algunas opciones
+%\usepackage{array}
+%\usepackage{tabulary}
+%\usepackage{tabularx}
+% El que mejor resultado da para 2 columnas
+\usepackage{tabu}
+
+
+% Captions(Epigrafes)
+% Para que la fuente de un epigrafe no tenga el mismo tamaño que el cuerpo del texto, tambien le indico donde va a estar para cada caso
+\usepackage[font=small,skip=0.3cm,tableposition=top,figureposition=bottom,justification=centering]{caption}
+
+%}}}
+
+% Listas{{{
+
+% Para listas
+% Para que las listas numeradas acepten opciones
+\usepackage[]{enumerate} 
+
+%}}}
+
+% Ecuaciones{{{
+%  Mas opciones de formato para ecuaciones
+\usepackage[]{amsmath}
+\usepackage[]{amsfonts}%Requerido por amsmath
+
+%}}}
+
+% Bibliografía{{{
+\usepackage[sorting=none,backend=biber]{biblatex}
+\addbibresource{bibliografia.bib}
+%}}}
+
+% Otros{{{
+\usepackage[hidelinks]{hyperref} % Para usar hipervinculos
+\usepackage[]{verbatim} % Para poder comentar por bloques
+\usepackage[]{lipsum} % Para rellenar con texto
+
+%}}}
+
+% Anexo{{{
+%Para poder utilizar anexos
+%\usepackage[toc,page]{appendix}
+
+%Fix para appendix y hyperref con español%{{{
+%\makeatletter
+%\let\oriAlph\Alph
+%\let\orialph\alph
+%\renewcommand{\@resets@pp}{\par
+%\@ppsavesec
+%\stepcounter{@pps}
+%\setcounter{section}{0}
+%\if@chapter@pp
+%\setcounter{chapter}{0}
+%\renewcommand\@chapapp{\appendixname}
+%\renewcommand\thechapter{\@Alph\c@chapter}
+%\else
+%\setcounter{subsection}{0}
+%\renewcommand\thesection{\@Alph\c@section}
+%\fi
+%\if@pphyper
+%\if@chapter@pp
+%\renewcommand{\theHchapter}{\theH@pps.\oriAlph{chapter}}
+%\else
+%\renewcommand{\theHsection}{\theH@pps.\oriAlph{section}}
+%\fi
+%\def\Hy@chapapp{appendix}
+%\fi
+%\restoreapp
+%}
+%\makeatother}}}
+
+%}}}
+
+% Comandos propios{{{
+
+% Para que el titulo y autor tengan el formato que corresponde
+\newcommand{\titulo}[1]{\title{\Large\bfseries\MakeUppercase{#1}} }
+\newcommand{\autor}[1]{\author{\bfseries\MakeUppercase{#1}} }
+
+% Para que los mail tengan hipervinculos
+\newcommand{\emailttt}[1]{\texttt{\href{mailto:#1}{#1}} }
+\newcommand{\email}[1]{\href{mailto:#1}{#1}}
+
+% Para utilizar variables para la materia y fecha
+\newcommand{\materia}[1]{\newcommand{\materiavar}{#1}}
+\newcommand{\Rheader}[1]{\newcommand{\fechavar}{#1}}
+\fancypagestyle{titlestyle}{
+    \fancyhead[R]{\fechavar}
+    \fancyhead[L]{\materiavar}
+}
+
+% Para insertar titulo
+\newcommand{\institulo}[0]{ \
+    \noindent \
+    {\begin{minipage}{\textwidth} \
+	    \centering \
+	    \maketitle \
+	    \thispagestyle{titlestyle} \
+    \end{minipage}} \
+}
+
+
+% Contador para numerar secciones correctamente
+\newcounter{arabiccount}
+
+\newcommand{\resetnumber}{
+    \addtocounter{arabiccount}{1}
+    \pagenumbering{Roman} % para resetear numeros
+    \pagenumbering{arabic}
+}
+
+% Para setear formato de secciones para el documento
+
+\newcommand{\documentformat}{
+    % Formato de las secciones
+    % Seccion
+    \titleformat{\section}
+    {\normalfont\large\bfseries\MakeUppercase}{\thesection.}{.3em}{}
+    \titlespacing*{\section}{0cm}{0.25cm}{0.15cm}
+
+    % Subseccion
+    \titleformat{\subsection}
+    {\normalfont\large\bfseries}{\thesubsection.}{.3em}{}
+    \titlespacing*{\subsection}{.15cm}{0.2cm}{0.1cm}
+
+    %Subsubseccion
+    \titleformat{\subsubsection}
+    {\normalfont\normalsize\bfseries}{\thesubsubsection.}{.3em}{}
+    \titlespacing*{\subsubsection}{0.25cm}{0.15cm}{0.05cm}
+
+    \titleformat{\caption}
+    {\normalfont\normalsize\bfseries}{\thesubsubsection.}{.3em}{}
+    \titlespacing*{\subsubsection}{0.25cm}{0.15cm}{0.05cm}
+
+    % Formato de numeros y pie de pagina
+    \pagenumbering{arabic}
+    \fancyhf{}
+    \pagestyle{fancy}
+    \fancyfoot[R]{\thepage\ \devar\ \lastpageref*{pagesLTS.arabic.\arabic{arabiccount}} }
+}
+
+\newcommand{\docstart}{
+    % Formato de la numeracion
+    \addtocounter{arabiccount}{1} 
+    \documentformat
+}
+
+\newcommand{\docstyle}{
+    % Formato de la numeracion
+    \clearpage
+    \resetnumber
+    \documentformat
+}
+
+
+% Para formato de secciones de anexos
+\newcommand{\appendixformat}[0]{
+
+    % Formato de secciones
+    % Seccion
+    \renewcommand{\thesection}{\Alph{section}}
+    \titleformat{\section}
+    {\normalfont\huge\bfseries\MakeUppercase}{\anexovar\ \thesection: }{.3em}{}
+    \titlespacing*{\section}{0cm}{0.25cm}{0.15cm}
+
+    % Subseccion
+    \titleformat{\subsection}
+    {\normalfont\large\bfseries\MakeUppercase}{\thesubsection.}{.3em}{}
+    \titlespacing*{\subsection}{0cm}{0.25cm}{0.15cm}
+
+    % Subsubseccion
+    \titleformat{\subsubsection}
+    {\normalfont\large\bfseries}{\thesubsubsection.}{.3em}{}
+    \titlespacing*{\subsubsection}{.15cm}{0.2cm}{0.1cm}
+
+
+
+    % Numeracion
+    \fancyhf{}
+    \pagestyle{fancy}
+    \fancyfoot[R]{\anexovar\ \thesection: \thepage\ \devar\ \lastpageref*{pagesLTS.arabic.\arabic{arabiccount}} }
+}
+
+\newcommand{\appendixstart}{
+    % Numeracion
+    \clearpage
+    \appendix
+    \setcounter{section}{0}
+    \resetnumber
+    \appendixformat
+
+}
+
+\newcommand{\appendixstyle}{
+    % Numeracion
+    \clearpage
+    \resetnumber
+    \appendixformat
+
+}
+
+
+
+%}}}

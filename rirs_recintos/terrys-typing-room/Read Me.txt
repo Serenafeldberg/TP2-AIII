@@ -1,0 +1,19 @@
+Description: 
+These Impulse Responses were measured in the partitioned typing room inside the Terry’s chocolate and confectionery factory in York. The factory was closed in 2005 and the site is planned for redevelopment.
+
+Mono: 
+
+    terrys_typing_omni.wav
+
+Sample Rate: 48 kHz
+Number of Channels: 1
+Bits per Sample: 24
+Duration: 5.8 s
+File Size: 815.82 KB
+File Format: wav
+Source Sound: Genelec S30D, 15 second log. sine sweep
+Microphone: Soundfield Microphone, SPS422B
+Source Receiver Distance (m): 8.86 m
+Source Height: 1.5 m
+Receiver Height: 1.5 m
+Temperature: 13 °C

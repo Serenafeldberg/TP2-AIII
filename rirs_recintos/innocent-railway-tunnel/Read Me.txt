@@ -1,0 +1,199 @@
+Description: 
+The innocent railway tunnel, or St Leonards Tunnel, is found just South East of the centre of Edinburgh, close to Arthur’s Seat. It was built in 1831, and designed to accommodate two railway tracks. It is 517 m long and straight, with a semicircular cross-section that is 6 m wide and 4.5 m high. The tunnel was closed in 1968 when this section of the railway was dismantled. In 1981 it was reopened as a footpath and later a tarmac surface was applied the floor of the tunnel. It now is also used as a cycle path and is part of the national cycling network. The first measurement, labelled “middle”, was made roughly in the middle of the tunnel, with a distance of 10 m between the loudspeaker and the microphone. A second set of impulse responses was then measured at the South East entrance of the tunnel, at 6 different positions relative to entrance – labelled “entrance” (a), (b), (c), (d), (e) and (f). For the second set the distance between the loudspeaker and microphone was 5 m. The transducer positions for each measurement are illustrated by the diagrams found in the “Images” tab. For each measurement there are two sets of impulse responses: One is made with a single directional sound source (IR-1), and the other is made with an array of four directional sound sources pointing in different directions in an attempt to better approximate an omni-directional source (IR-2). The impulse responses recorded near the tunnel entrance have been normalised with respect to each other, so that the relative sound levels between measurements has been preserved.
+
+Mono: 
+
+    middle_tunnel_1way_mono.wav
+
+Sample Rate: 96 kHz
+Number of Channels: 1
+Bits per Sample: 24
+Duration: 5 s
+File Size: 1.37 MB
+File Format: wav
+Source Receiver Distance (m): 10 m
+Source Height: 1.5 m
+Receiver Height: 1.5 m
+Temperature: 17 °C
+
+
+    middle_tunnel_4way_mono.wav
+
+Sample Rate: 96 kHz
+Number of Channels: 1
+Bits per Sample: 24
+Duration: 5 s
+File Size: 1.37 MB
+File Format: wav
+Source Receiver Distance (m): 10 m
+Source Height: 1.5 m
+Receiver Height: 1.5 m
+Temperature: 17 °C
+
+
+    tunnel_entrance_a_1way_mono.wav
+
+Sample Rate: 96 kHz
+Number of Channels: 1
+Bits per Sample: 24
+Duration: 5 s
+File Size: 1.37 MB
+File Format: wav
+Source Receiver Distance (m): 5 m
+Source Height: 1.5 m
+Receiver Height: 1.5 m
+Temperature: 17 °C
+
+
+    tunnel_entrance_b_1way_mono.wav
+
+Sample Rate: 96 kHz
+Number of Channels: 1
+Bits per Sample: 24
+Duration: 5 s
+File Size: 1.37 MB
+File Format: wav
+Source Receiver Distance (m): 5 m
+Source Height: 1.5 m
+Receiver Height: 1.5 m
+Temperature: 17 °C
+
+
+    tunnel_entrance_c_1way_mono.wav
+
+Sample Rate: 96 kHz
+Number of Channels: 1
+Bits per Sample: 24
+Duration: 5 s
+File Size: 1.37 MB
+File Format: wav
+Source Receiver Distance (m): 5 m
+Source Height: 1.5 m
+Receiver Height: 1.5 m
+Temperature: 17 °C
+
+
+    tunnel_entrance_d_1way_mono.wav
+
+Sample Rate: 96 kHz
+Number of Channels: 1
+Bits per Sample: 24
+Duration: 5 s
+File Size: 1.37 MB
+File Format: wav
+Source Receiver Distance (m): 5 m
+Source Height: 1.5 m
+Receiver Height: 1.5 m
+Temperature: 17 °C
+
+
+    tunnel_entrance_e_1way_mono.wav
+
+Sample Rate: 96 kHz
+Number of Channels: 1
+Bits per Sample: 24
+Duration: 5 s
+File Size: 1.37 MB
+File Format: wav
+Source Receiver Distance (m): 5 m
+Source Height: 1.5 m
+Receiver Height: 1.5 m
+Temperature: 17 °C
+
+
+    tunnel_entrance_f_1way_mono.wav
+
+Sample Rate: 96 kHz
+Number of Channels: 1
+Bits per Sample: 24
+Duration: 5 s
+File Size: 1.37 MB
+File Format: wav
+Source Receiver Distance (m): 5 m
+Source Height: 1.5 m
+Receiver Height: 1.5 m
+Temperature: 17 °C
+
+
+    tunnel_entrance_a_4way_mono.wav
+
+Sample Rate: 96 kHz
+Number of Channels: 1
+Bits per Sample: 24
+Duration: 5 s
+File Size: 1.37 MB
+File Format: wav
+Source Receiver Distance (m): 5 m
+Source Height: 1.5 m
+Receiver Height: 1.5 m
+Temperature: 17 °C
+
+
+    tunnel_entrance_b_4way_mono.wav
+
+Sample Rate: 96 kHz
+Number of Channels: 1
+Bits per Sample: 24
+Duration: 5 s
+File Size: 1.37 MB
+File Format: wav
+Source Receiver Distance (m): 5 m
+Source Height: 1.5 m
+Receiver Height: 1.5 m
+Temperature: 17 °C
+
+
+    tunnel_entrance_c_4way_mono.wav
+
+Sample Rate: 96 kHz
+Number of Channels: 1
+Bits per Sample: 24
+Duration: 5 s
+File Size: 1.37 MB
+File Format: wav
+Source Receiver Distance (m): 5 m
+Source Height: 1.5 m
+Receiver Height: 1.5 m
+Temperature: 17 °C
+
+
+    tunnel_entrance_d_4way_mono.wav
+
+Sample Rate: 96 kHz
+Number of Channels: 1
+Bits per Sample: 24
+Duration: 5 s
+File Size: 1.37 MB
+File Format: wav
+Source Receiver Distance (m): 5 m
+Source Height: 1.5 m
+Receiver Height: 1.5 m
+Temperature: 17 °C
+
+
+    tunnel_entrance_e_4way_mono.wav
+
+Sample Rate: 96 kHz
+Number of Channels: 1
+Bits per Sample: 24
+Duration: 5 s
+File Size: 1.37 MB
+File Format: wav
+Source Receiver Distance (m): 5 m
+Source Height: 1.5 m
+Receiver Height: 1.5 m
+Temperature: 17 °C
+
+
+    tunnel_entrance_f_4way_mono.wav
+
+Sample Rate: 96 kHz
+Number of Channels: 1
+Bits per Sample: 24
+Duration: 5 s
+File Size: 1.37 MB
+File Format: wav
+Source Receiver Distance (m): 5 m
+Source Height: 1.5 m
+Receiver Height: 1.5 m
+Temperature: 17 °C

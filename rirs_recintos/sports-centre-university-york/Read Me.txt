@@ -1,0 +1,14 @@
+Description: 
+These measurements were made in a large sports hall in the sports centre at York university. The reverberation tail is very long.
+
+Mono: 
+
+    sportscentre_omni.wav
+
+Sample Rate: 96 kHz
+Number of Channels: 1
+Bits per Sample: 24
+Duration: 9.8 s
+File Size: 2.69 MB
+File Format: wav
+
