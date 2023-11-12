@@ -6,15 +6,15 @@ from scipy.signal import find_peaks
 def read_WAV_file (path):
 
     data, samplerate = sf.read(path)
-    print("La maxima amplitud es: ", np.max(data))
-    print("La minima amplitud es: ", np.min(data))
-    print("La frecuencia de muestreo es: ", samplerate)
-    print("La cantidad de muestras es: ", len(data))
+    # print("La maxima amplitud es: ", np.max(data))
+    # print("La minima amplitud es: ", np.min(data))
+    # print("La frecuencia de muestreo es: ", samplerate)
+    # print("La cantidad de muestras es: ", len(data))
 
-    plt.plot(data)
-    plt.xlabel("Tiempo (s) / muestras")
-    plt.ylabel("Amplitud")
-    plt.show()
+    # plt.plot(data)
+    # plt.xlabel("Tiempo (s) / muestras")
+    # plt.ylabel("Amplitud")
+    # plt.show()
 
     return data, samplerate
 
@@ -30,7 +30,6 @@ def show_recortes (data):
 
 def mismo_tam (data, step):
     # hacer todos del mismo tamaño --> desde su amplitud maxima, le dejo 100000 muestras
-    step = 25000
     for i in range(len(data)):
         index = np.argmax(data[i])
         init = index - step
@@ -49,45 +48,41 @@ def globos_6 (data, samplerate):
 
     globos = [primero, segundo, tercero, cuarto, quinto, sexto]
 
-    return mismo_tam(globos, 25000)
+    return mismo_tam(globos, 10000)
 
 def aplausos_10 (data):
     aplauso_1 = data[:100000]
-    aplauso_2 = data[100000:200000]
-    aplauso_3 = data[200000:270000]
-    aplauso_4 = data[270000:310000]
+    aplauso_2 = data[120000:180000]
+    aplauso_3 = data[200000:260000]
+    aplauso_4 = data[270000:330000]
     aplauso_5 = data[350000:400000]
-    aplauso_6 = data[400000:480000]
-    aplauso_7 = data[490000:580000]
-    aplauso_8 = data[580000:620000]
-    aplauso_9 = data[650000:720000]
-    aplauso_10 = data[720000:800000] 
+    aplauso_6 = data[420000:480000]
+    aplauso_7 = data[500000:550000]
+    aplauso_8 = data[570000:620000]
+    aplauso_9 = data[650000:710000]
+    aplauso_10 = data[720000:780000] 
     aplausos = [aplauso_1, aplauso_2, aplauso_3, aplauso_4, aplauso_5, aplauso_6, aplauso_7, aplauso_8, aplauso_9, aplauso_10]
 
+    # for a in aplausos:
+    #     plt.plot(a)
+    #     plt.show()
+
     return mismo_tam(aplausos, 10000)
-    # hacer todos del mismo tamaño --> desde su amplitud maxima, le dejo 100000 muestras
-    step = 10000
-    for i in range(len(aplausos)): 
-        index = np.argmax(aplausos[i])
-        init = index - step
-        end = index + step
-        aplausos[i] = aplausos[i][init : end]  
-    return aplausos
 
 def maderas_10 (data):
-    madera_1 = data[80000:100000]
-    madera_2 = data[170000:185000]
-    madera_3 = data[250000:270000]
-    madera_4 = data[342000:360000]
-    madera_5 = data[430000:450000]
-    madera_6 = data[520000:540000]
-    madera_7 = data[600000:620000]
-    madera_8 = data[680000:700000]
-    madera_9 = data[780000:800000]
-    madera_10 = data[860000:880000]
-    maderas= [madera_1, madera_2, madera_3, madera_4, madera_5, madera_6, madera_7, madera_8, madera_9, madera_10]
+    primero = data[60000:120000]
+    segundo = data[140000:200000]
+    tercero = data[230000:300000]
+    cuarto = data[320000:380000]
+    quinto = data[410000:470000]
+    sexto = data[500000:560000]
+    septimo = data[580000:640000]
+    octavo = data[660000:720000]
+    noveno = data[750000:830000]
+    decimo = data[840000:900000]
+    maderas = [primero, segundo, tercero, cuarto, quinto, sexto, septimo, octavo, noveno, decimo]
     
-    return mismo_tam(maderas)
+    return mismo_tam(maderas, 10000)
 
 def globos_mie (data):
     primero = data[:300000]
@@ -103,7 +98,37 @@ def globos_mie (data):
 
     # return globos
 
-    return mismo_tam(globos, 50000)
+    return mismo_tam(globos, 10000)
+
+def aplausis_mie (data):
+    primero = data[:110000]
+    segundo = data[120000:170000]
+    tercero = data[180000:230000]
+    cuarto = data[240000:290000]
+    quinto = data[300000:350000]
+    sexto = data[355000:410000]
+    septimo = data[415000:460000]
+    octavo = data[480000:520000]
+    noveno = data[520000:580000]
+    decimo = data[580000:630000]
+    aplausos = [primero, segundo, tercero, cuarto, quinto, sexto, septimo, octavo, noveno, decimo]
+
+    return mismo_tam(aplausos, 10000)
+
+def maderas_mie (data):
+    primero = data[40000:90000]
+    segundo = data[110000:170000]
+    tercero = data[190000:240000]
+    cuarto = data[260000:310000]
+    quinto = data[330000:390000]
+    sexto = data[405000:460000]
+    septimo = data[480000:530000]
+    octavo = data[550000:600000]
+    noveno = data[620000:670000]
+    decimo = data[690000:740000]
+    maderas = [primero, segundo, tercero, cuarto, quinto, sexto, septimo, octavo, noveno, decimo]
+
+    return mismo_tam(maderas, 10000)
 
 def get_medias (impulsos):
     medias = []
@@ -135,14 +160,36 @@ def std_up_down (means, std):
 
     return up, down
 
-def plot_means (means, std, up, down, title):
+def plot_means (means, std, up, down, title, samplerate):
+
+    print(len(means))
+
+    tiempo = [0]
+    for i in range(1, len(means)):
+        tiempo.append(1/ samplerate*i)
+
+    # Plot de la media y el desvio estandar
+    plt.figure(figsize=(10, 4))
+    plt.plot(tiempo, means, color='b')
+    # plt.plot(up, color='r')
+    # plt.plot(down, color='r')
+    plt.title(title)
+    plt.xlabel('Tiempo (s)')
+    plt.ylabel('Amplitud')
+    plt.grid(True)
+    plt.show()
+
+def plot_means_f (means, std, up, down, title):
+
+    print(len(means))
+
     # Plot de la media y el desvio estandar
     plt.figure(figsize=(10, 4))
     plt.plot(means, color='b')
-    plt.plot(up, color='r')
-    plt.plot(down, color='r')
+    plt.plot(up, color='r', linestyle='dashed')
+    plt.plot(down, color='r', linestyle='dashed')
     plt.title(title)
-    plt.xlabel('Tiempo (s)')
+    plt.xlabel('Frecuencia (Hz)')
     plt.ylabel('Amplitud')
     plt.grid(True)
     plt.show()
@@ -151,9 +198,13 @@ def transformada (impulsos):
     ts = []
     for i in range(len(impulsos)):
         tsi = (np.fft.fft(impulsos[i]))
-        ts.append(abs(tsi[0:1000]))
+        ts.append(abs(tsi))
 
     return ts
+
+def normalizar (impulsos):
+    impulsos = np.array(impulsos)
+    return impulsos / np.max(impulsos)
 
 def suavizar (media, up, down, window_size=5):
     # Aplicar un filtro de media móvil a la media
@@ -198,28 +249,38 @@ def plot_espectro_de_frec(data, samplerate):
     plt.grid(True)
     plt.show()
 
+#GLOBOS
+data6, samplerate6 = read_WAV_file("/Users/serena/Desktop/UDESA/Analisis matematico III/TP2-AIII/mediciones_tp2/caracterizacion_fuentes/lunes/carac_fuentes_6globos.wav")
+globos_l = globos_6(data6, samplerate6)
+data_globos, samplerate_globos = read_WAV_file("/Users/serena/Desktop/UDESA/Analisis matematico III/TP2-AIII/mediciones_tp2/caracterizacion_fuentes/miercoles/Globos.wav")
+globos_m = globos_mie(data_globos)
 
-# data6, samplerate6 = read_WAV_file("/Users/serena/Desktop/UDESA/Analisis matematico III/TP2-AIII/mediciones_tp2/caracterizacion_fuentes/lunes/carac_fuentes_6globos.wav")
-# globos = globos_6(data6, samplerate6)
-# medias_globos = get_medias(globos)
-# std_globos = get_std(globos)
-# up, down = std_up_down(medias_globos, std_globos)
-# plot_means(medias_globos, std_globos, up, down, 'Media de los 6 Globos')
+globos = globos_l + globos_m
 
-# transformada_globos = transformada(globos)
-# medias_globost = get_medias(transformada_globos)
-# std_globost = get_std(transformada_globos)
-# up, down = std_up_down(medias_globost, std_globost)
-# plot_means(medias_globost, std_globost, up, down, 'Media de los 6 Globos (Transformada)')
+medias_globos = get_medias(globos)
+std_globos = get_std(globos)
+up, down = std_up_down(medias_globos, std_globos)
+plot_means(medias_globos, std_globos, up, down, 'Media de los 6 Globos', samplerate6)
 
-# media_suanizada, up_suanizada, down_suanizada = suavizar(medias_globost, up, down)
-# plot_means(media_suanizada, std_globost, up_suanizada, down_suanizada, 'Media de los 6 Globos (Transformada) Suavizada')
+transformada_globos = transformada(globos)
+medias_globost = get_medias(transformada_globos)
+medias_globost = normalizar(medias_globost)
+std_globost = get_std(transformada_globos)
+std_globost = normalizar(std_globost)
+up, down = std_up_down(medias_globost, std_globost)
+plot_means_f(medias_globost, std_globost, up, down, 'Media de los 6 Globos (Transformada)')
 
+media_suanizada, up_suanizada, down_suanizada = suavizar(medias_globost, up, down)
+plot_means_f(media_suanizada, std_globost, up_suanizada, down_suanizada, 'Media de los 6 Globos (Transformada) Suavizada')
 
+#APLAUSOS
 data_10a, samplerate_10a = read_WAV_file("/Users/serena/Desktop/UDESA/Analisis matematico III/TP2-AIII/mediciones_tp2/caracterizacion_fuentes/lunes/carac_fuentes_10aplausos.wav")
-aplausos = aplausos_10(data_10a)
+aplausos_l = aplausos_10(data_10a)
+data_aplausos, samplerate_aplausos = read_WAV_file("/Users/serena/Desktop/UDESA/Analisis matematico III/TP2-AIII/mediciones_tp2/caracterizacion_fuentes/miercoles/Aplausos.wav")
+aplausos_m = aplausis_mie(data_aplausos)
 
-show_recortes(aplausos)
+aplausos = aplausos_l + aplausos_m
+
 # medias_aplausos = get_medias(aplausos)
 # std_aplausos = get_std(aplausos)
 # up, down = std_up_down(medias_aplausos, std_aplausos)
@@ -235,8 +296,14 @@ show_recortes(aplausos)
 # plot_means(media_suanizada, std_aplaust, up_suanizada, down_suanizada, 'Media de los 10 Aplausos (Transformada) Suavizada')
 
 
-# data_10m, samplerate_10m = read_WAV_file("/Users/serena/Desktop/UDESA/Analisis matematico III/TP2-AIII/mediciones_tp2/caracterizacion_fuentes/lunes/carac_fuentes_10maderas.wav")
-# maderas = maderas_10(data_10m)
+#MADERAS
+data_10m, samplerate_10m = read_WAV_file("/Users/serena/Desktop/UDESA/Analisis matematico III/TP2-AIII/mediciones_tp2/caracterizacion_fuentes/lunes/carac_fuentes_10maderas.wav")
+maderas_l = maderas_10(data_10m)
+data_maderas, samplerate_maderas = read_WAV_file("/Users/serena/Desktop/UDESA/Analisis matematico III/TP2-AIII/mediciones_tp2/caracterizacion_fuentes/miercoles/Maderas.wav")
+maderas_m = maderas_mie(data_maderas)
+
+maderas = maderas_l + maderas_m
+
 # medias_maderas = get_medias(maderas)
 # std_maderas = get_std(maderas)
 # up, down = std_up_down(medias_maderas, std_maderas)
@@ -251,8 +318,5 @@ show_recortes(aplausos)
 # media_suanizada, up_suanizada, down_suanizada = suavizar(medias_maderast, up, down)
 # plot_means(media_suanizada, std_maderast, up_suanizada, down_suanizada, 'Media de los 10 Maderas (Transformada) Suavizada')
 
-# data_globos, samplerate_globos = read_WAV_file("/Users/serena/Desktop/UDESA/Analisis matematico III/TP2-AIII/mediciones_tp2/caracterizacion_fuentes/miercoles/Globos.wav")
-# globos_m = globos_mie(data_globos)
 
-# show_recortes(globos_m)
 
