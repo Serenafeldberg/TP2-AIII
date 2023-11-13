@@ -3,6 +3,7 @@ import numpy as np
 import soundfile as sf
 from scipy.signal import find_peaks
 from recortes import *
+import librosa
 
 def read_WAV_file (path):
 
@@ -174,7 +175,7 @@ def plot_means (means, std, up, down, title, samplerate):
     plt.plot(tiempo, means, color='b')
     # plt.plot(up, color='r')
     # plt.plot(down, color='r')
-    plt.title(title, fontsize=15)
+    plt.title(title, fontsize=16)
     plt.xlabel('Tiempo (s)')
     plt.ylabel('Amplitud')
     plt.grid(True)
@@ -186,15 +187,18 @@ def plot_means_f (means, std, up, down, title, sr):
     for i in range(len(means)):
         frecuencia.append(i*2)
 
-    print(len(frecuencia))
+    # means = 10*np.log10(means/np.max(means))
+    # up = 10*np.log10(up/np.max(up))
+    # down = 10*np.log10(down/np.max(down))
 
 
     # Plot de la media y el desvio estandar
     plt.figure(figsize=(10, 4))
-    plt.plot(frecuencia, means, color='b')
-    plt.plot(frecuencia, up, color='r', linestyle='dashed')
+    plt.plot(frecuencia, means, color='b', label='Media')
+    plt.plot(frecuencia, up, color='r', linestyle='dashed', label='Desvio estandar')
     plt.plot(frecuencia, down, color='r', linestyle='dashed')
-    plt.title(title)
+    plt.legend()
+    plt.title(title, fontsize=16)
     plt.xlabel('Frecuencia (Hz)')
     plt.ylabel('Amplitud')
     plt.grid(True)
@@ -270,17 +274,8 @@ def carac ():
     up, down = std_up_down(medias_globos, std_globos)
     # plot_means(medias_globos, std_globos, up, down, 'Media de los 15 globos', samplerate6)
 
-    transformada_globos = transformada(globos)
-    medias_globost = get_medias(transformada_globos)
-    medias_globost = normalizar(medias_globost)
-    std_globost = get_std(transformada_globos)
-    std_globost = normalizar(std_globost)
-    up, down = std_up_down(medias_globost, std_globost)
-    # plot_means_f(medias_globost, std_globost, up, down, 'Media de los 6 Globos (Transformada)', samplerate_globos)
-
-    # media_suanizada, up_suanizada, down_suanizada = suavizar(medias_globost, up, down)
-    # plot_means_f(media_suanizada, std_globost, up_suanizada, down_suanizada, 'Media de los 6 Globos (Transformada) Suavizada')
-
+    plot_transformada(globos, 'Transformada de los 15 Globos')
+    
     #APLAUSOS
     data_10a, samplerate_10a = read_WAV_file("/Users/serena/Desktop/UDESA/Analisis matematico III/TP2-AIII/mediciones_tp2/caracterizacion_fuentes/lunes/carac_fuentes_10aplausos.wav")
     aplausos_l = aplausos_10(data_10a)
@@ -294,17 +289,7 @@ def carac ():
     up, down = std_up_down(medias_aplausos, std_aplausos)
     # plot_means(medias_aplausos, std_aplausos, up, down, f'Media de los {len(aplausos)} aplausos', samplerate_aplausos)
 
-    # transformada_aplausos = transformada(aplausos)
-    # medias_aplaust = get_medias(transformada_aplausos)
-    # medias_aplaust = normalizar(medias_aplaust)
-    # std_aplaust = get_std(transformada_aplausos)
-    # std_aplaust = normalizar(std_aplaust)
-    # up, down = std_up_down(medias_aplaust, std_aplaust)
-    # plot_means(medias_aplaust, std_aplaust, up, down, 'Media de los 10 Aplausos (Transformada)')
-
-    # media_suanizada, up_suanizada, down_suanizada = suavizar(medias_aplaust, up, down)
-    # plot_means(media_suanizada, std_aplaust, up_suanizada, down_suanizada, 'Media de los 10 Aplausos (Transformada) Suavizada')
-
+    plot_transformada(aplausos, 'Transformada de los Aplausos')
 
     #MADERAS
     data_10m, samplerate_10m = read_WAV_file("/Users/serena/Desktop/UDESA/Analisis matematico III/TP2-AIII/mediciones_tp2/caracterizacion_fuentes/lunes/carac_fuentes_10maderas.wav")
@@ -319,16 +304,7 @@ def carac ():
     up, down = std_up_down(medias_maderas, std_maderas)
     # plot_means(medias_maderas, std_maderas, up, down, f'Media de las {len(maderas)} maderas', samplerate_maderas)
 
-    # transformada_maderas = transformada(maderas)
-    # medias_maderast = get_medias(transformada_maderas)
-    # medias_maderast = normalizar(medias_maderast)
-    # std_maderast = get_std(transformada_maderas)
-    # std_maderast = normalizar(std_maderast)
-    # up, down = std_up_down(medias_maderast, std_maderast)
-    # plot_means(medias_maderast, std_maderast, up, down, 'Media de los 10 Maderas (Transformada)')
-
-    # media_suanizada, up_suanizada, down_suanizada = suavizar(medias_maderast, up, down)
-    # plot_means(media_suanizada, std_maderast, up_suanizada, down_ suanizada, 'Media de los 10 Maderas (Transformada) Suavizada')
+    plot_transformada(maderas, 'Transformada de las Maderas')
 
 def plot_diferencias (data_m, data_sm, sr, title):
     tiempo = []
@@ -344,6 +320,17 @@ def plot_diferencias (data_m, data_sm, sr, title):
     plt.grid(True)
     plt.show()
 
+def plot_transformada (data, title):
+    fft = transformada(data)
+    fft_m = get_medias(fft)
+    fft_m = 10*np.log10(fft_m/np.max(fft_m))
+    fft_std = get_std(fft)
+    fft_std = 10*np.log10(fft_std/np.max(fft_std))
+    up, down = std_up_down(fft_m, fft_std)
+
+    media, up, down = suavizar(fft_m, up, down, 50)
+    plot_means_f(media, fft_std, up, down, title, 44100)
+
 
 def rta_impulso ():
     aplausos = []
@@ -353,32 +340,42 @@ def rta_impulso ():
     am_media, asm_media = get_medias(am), get_medias(asm)
     # plot_diferencias(am_media, asm_media, aplausos[0][1], 'Respuesta al impulso de los aplausos')
 
-    am_fft = transformada(am)
-    am_fft_m = get_medias(am_fft)
-    am_fft_m = normalizar(am_fft_m)
-    am_fft_std = get_std(am_fft)
-    am_fft_std = normalizar(am_fft_std)
-    up, down = std_up_down(am_fft_m, am_fft_std)
-    plot_means_f(am_fft_m, am_fft_std, up, down, 'Media de los 10 Aplausos (Transformada)', aplausos[0][1])
+    plot_transformada(am, 'Transformada de los Aplausos (Con mochilas)')
 
+    plot_transformada(asm, 'Transformada de los Aplausos (Sin mochilas)')
 
 
     globos = []
     globos.append(read_WAV_file("/Users/serena/Desktop/UDESA/Analisis matematico III/TP2-AIII/mediciones_tp2/respuesta_impulso/con_mochilas/Globos.wav"))
     globos.append(read_WAV_file("/Users/serena/Desktop/UDESA/Analisis matematico III/TP2-AIII/mediciones_tp2/respuesta_impulso/sin_mochilas/Globos sin mochilas.wav"))
     gm, gsm = recorte_globos(globos)
-    gm, gsm = get_medias(gm), get_medias(gsm)
-    # plot_diferencias(gm, gsm, globos[0][1], 'Respuesta al impulso de los globos')
+    gm_media, gsm_media = get_medias(gm), get_medias(gsm)
+    # plot_diferencias(gm_media, gsm_media, globos[0][1], 'Respuesta al impulso de los globos')
 
+    plot_transformada(gm, 'Transformada de los Globos (Con mochilas)')
+
+    plot_transformada(gsm, 'Transformada de los Globos (Sin mochilas)')
 
     maderas = []
     maderas.append(read_WAV_file("/Users/serena/Desktop/UDESA/Analisis matematico III/TP2-AIII/mediciones_tp2/respuesta_impulso/con_mochilas/Maderas.wav"))
     maderas.append(read_WAV_file("/Users/serena/Desktop/UDESA/Analisis matematico III/TP2-AIII/mediciones_tp2/respuesta_impulso/sin_mochilas/Maderas sin mochilas.wav"))
     mm, msm = recorte_maderas(maderas)
-    mm, msm = get_medias(mm), get_medias(msm)
-    # plot_diferencias(mm, msm, maderas[0][1], 'Respuesta al impulso de las maderas')
+    mm_media, msm_media = get_medias(mm), get_medias(msm)
+    # plot_diferencias(mm_media, msm_media, maderas[0][1], 'Respuesta al impulso de las maderas')
+
+    plot_transformada(mm, 'Transformada de las Maderas (Con mochilas)')
+
+    plot_transformada(msm, 'Transformada de las Maderas (Sin mochilas)')
 
 
 
     
-rta_impulso()
+
+
+
+
+
+    
+# rta_impulso()
+
+# carac()
